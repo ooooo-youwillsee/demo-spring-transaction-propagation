@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @Service
-public class ServiceA {
+public class UserService {
 
     @Autowired
     private UserMapper userMapper;

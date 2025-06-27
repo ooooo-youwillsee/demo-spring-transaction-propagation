@@ -14,40 +14,40 @@ import org.springframework.transaction.annotation.Transactional;
 public class DemoService {
 
     @Autowired
-    private ServiceA serviceA;
+    private UserService userService;
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_REQUIRED() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.REQUIRED(new User("222"), true);
+            userService.REQUIRED(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_REQUIRES_NEW() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.REQUIRES_NEW(new User("222"), true);
+            userService.REQUIRES_NEW(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_NESTED() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.NESTED(new User("222"), true);
+            userService.NESTED(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_NOT_SUPPORTED() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.NOT_SUPPORTED(new User("222"), true);
+            userService.NOT_SUPPORTED(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
@@ -55,26 +55,26 @@ public class DemoService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_SUPPORTS() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.SUPPORTS(new User("222"), true);
+            userService.SUPPORTS(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_NEVER() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.NEVER(new User("222"), true);
+            userService.NEVER(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
     @Transactional(propagation = Propagation.REQUIRED)
     public void REQUIRED_MANDATORY() {
-        serviceA.REQUIRED(new User("111"), false);
+        userService.REQUIRED(new User("111"), false);
         try {
-            serviceA.MANDATORY(new User("222"), true);
+            userService.MANDATORY(new User("222"), true);
         } catch (Exception ignored) {
         }
     }
